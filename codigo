@@ -1,0 +1,27 @@
+# ============================
+# excepciones.py
+# ============================
+
+class DatoInvalidoError(Exception):
+    pass
+
+class ServicioNoDisponibleError(Exception):
+    pass
+
+class ReservaInvalidaError(Exception):
+    pass
+
+
+# ============================
+# logger.py
+# ============================
+
+import datetime
+
+def registrar_evento(mensaje):
+    with open("logs.txt", "a") as archivo:
+        archivo.write(f"[EVENTO] {datetime.datetime.now()} - {mensaje}\n")
+
+def registrar_error(mensaje):
+    with open("logs.txt", "a") as archivo:
+        archivo.write(f"[ERROR] {datetime.datetime
